@@ -1,0 +1,7 @@
+AuthType Basic
+AuthName "Password"
+AuthUserFile "/DCNFS/users/web/pages/tchen/.htpasswd"
+Require Valid-User
+
+
+
