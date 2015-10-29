@@ -7,7 +7,7 @@
     <?php
     $row=1;
     ini_set('auto_detect_line_endings', TRUE);
-    if(($handle = fopen("../resource/COEN/courseList.csv", "r")) !== FALSE) {
+    if(($handle = fopen("../../resource/COEN/courseList.csv", "r")) !== FALSE) {
 	while(($data= fgetcsv($handle, 1000, ",")) !== FALSE) {
 	    $num = count($data);
 	    for($c=0; $c<$num; $c+=3) {
