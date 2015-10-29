@@ -22,7 +22,7 @@ th, td {
     <th>Last Name</th>
     <th>First Name</th>
     <th>ID Number</th>
-    <th>Year</th>
+    <th>Graduation Year</th>
     <th>E-mail Address</th>
     <th>Reason for needing class</th>
   </tr>
