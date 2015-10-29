@@ -4,12 +4,13 @@
   <button><a href='index.php'>Return</a></button> <br />
   <br />
   <?php
-    $directory = "../resource/";
-    $fileTarget = "../resource/" . $_SERVER['REMOTE_USER'] . ".csv";
+    // actual file we will save
+    $actFile = "../resource/courseList/" . $_SERVER['REMOTE_USER'] . ".csv";
+    // uploaded file
     $tmpFile = $_FILES["courseList"]["tmp_name"];
 
     $fp = fopen($tmpFile, "r");
-    $fw = fopen($fileTarget, "w");
+    $fw = fopen($actFile, "w");
     $lineNumber = 0;
     $sectionIdArray = array();
     while( ($data = fgetcsv($fp)) !== false ) {
