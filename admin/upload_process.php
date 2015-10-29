@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <button><a href='index.html'>Return</a></button>
+  <button><a href='index.php'>Return</a></button>
   <br />
   <?php
     $directory = "../resource/";
