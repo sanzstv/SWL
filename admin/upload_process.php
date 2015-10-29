@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <button><a href='index.php'>Return</a></button>
+  <button><a href='index.php'>Return</a></button> <br />
   <br />
   <?php
     $directory = "../resource/";
-    $fileTarget = $directory . basename($_FILES["courseList"]["name"]);
-    $fileExt = pathinfo($fileTarget, PATHINFO_EXTENSION);
-    if( strcasecmp($fileExt, 'csv') != 0 )
-      die("Incorrect file extension! Please use CSV files.");
+    $fileTarget = "../resource/" . $_SERVER['REMOTE_USER'] . ".csv";
     $tmpFile = $_FILES["courseList"]["tmp_name"];
 
     $fp = fopen($tmpFile, "r");
     $fw = fopen($fileTarget, "w");
     $lineNumber = 0;
+    $sectionIdArray = array();
     while( ($data = fgetcsv($fp)) !== false ) {
       $lineNumber++;
       if( count($data) == 1 && $data[0] == null )
@@ -25,21 +23,29 @@
       $courseName = trim($data[2]);
       if( strlen($courseSection) != 5 || ! is_numeric($courseSection) )
         die(
-          "Course Section on line $lineNumber is not in correct format.<br />" .
-          "$lineNumber : $courseSection, $courseNumber, $courseName"
+          "Line $lineNumber's Section Number is not in correct format.<br />" .
+          "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />" .
+          "<br />Upload Cancelled<br />"
         );
       if( strlen($courseNumber) != 3 || ! is_numeric($courseNumber) )
         die(
-          "Course Number on line $lineNumber is not in correct format.<br />" .
-          "$lineNumber : $courseSection, $courseNumber, $courseName"
+          "Line $lineNumber's Course Number is not in correct format.<br />" .
+          "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />" .
+          "<br />Upload Cancelled<br />"
         );
+      if(array_key_exists($courseSection, $sectionIdArray)) {
+        echo "Line $lineNumber was not added because it already exists.<br />";
+        echo "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />";
+        continue;
+      }
+      $sectionIdArray[$courseSection] = true;
       if( ! fwrite($fw, "$courseSection,$courseNumber,$courseName\n") )
         die("Error writing file to server. Please contact the administrator.");
     }
     fclose($fw);
     fclose($fp);
 
-    echo "Upload Success <br />";
+    echo "<br />Upload Success<br />";
   ?>
 </body>
 </html>
