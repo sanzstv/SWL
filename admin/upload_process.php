@@ -5,7 +5,7 @@
   <br />
   <?php
     // actual file we will save
-    $actFile = "../resource/courseList/" . $_SERVER['REMOTE_USER'] . ".csv";
+    $actFile = "../resource/" . $_SERVER['REMOTE_USER'] . "/courseList.csv";
     // uploaded file
     $tmpFile = $_FILES["courseList"]["tmp_name"];
 
