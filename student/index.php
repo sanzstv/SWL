@@ -22,7 +22,7 @@ Department:<select required id = "department">
         <option value = "">Select one</option>
 <?php
         //list departments with available waitlists
-        for_each(glob("../resource") as $file)
+        foreach(glob("../resource") as $file)
         {
                 //parse file names
                 $depts = basename($file, '.csv');
