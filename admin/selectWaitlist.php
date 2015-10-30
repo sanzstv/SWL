@@ -33,7 +33,7 @@ if(($handle = fopen("courseList.csv", "r")) !== FALSE) {
 	    echo "<p>";
 	    echo "<tr>"; 
 	    echo "<td>"; 
-	    echo "<a href='parseCSV.php'><button>Select</button></a>";
+	    echo "<a href='view_waitlist.php'><button>Select</button></a>";
 	    foreach($data as $cell) {
 		echo "<td>" . htmlspecialchars($cell);
 	    }
