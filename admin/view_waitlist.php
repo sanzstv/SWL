@@ -32,7 +32,7 @@ th, td {
 $row = 1;
 ini_set('auto_detect_line_endings', TRUE);
 //Make sure we can actually open CSV file
-if (($handle = fopen("test.csv", "r")) !== FALSE) {
+if (($handle = fopen("../resource/COEN/request/12345.csv", "r")) !== FALSE) {
     //scan through CSV file
     while(($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 	//Create new row and put CSV file data in it
