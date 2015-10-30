@@ -33,6 +33,7 @@ $row = 1;
 ini_set('auto_detect_line_endings', TRUE);
 //Make sure we can actually open CSV file
 if (($handle = fopen("../resource/COEN/request/12345.csv", "r")) !== FALSE) {
+    //HOW DO I SELECT RIGHT CSV FILE??????
     //scan through CSV file
     while(($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
 	//Create new row and put CSV file data in it
