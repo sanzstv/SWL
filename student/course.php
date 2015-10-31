@@ -12,17 +12,17 @@
 <h4 class = "des">Select Couse</h4>
 
 
-<p>Select the course you wish to enroll in.</br></br>
+<p>Select the department of the class waitlist you wish to enroll in.</br></br>
 
 A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
 
 	
-        Course:<select required id = "course">
+        Course:<select required id = "department">
                 <option value = "">Select one</option>
         <?php 
 			
-			$file = "../resource/" + $_POST[$key] + ".csv"
-			echo $_POST[$key]
+			$file = "../resource/*" + $_POST[$key] + ".csv";
+			echo $_POST[$key];
 			
 			
 
@@ -53,3 +53,4 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 
 <script type ="text/javascript"></script>
 </html>
+
