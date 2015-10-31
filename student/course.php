@@ -17,11 +17,11 @@
 A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
 
 	
-        Course:<select required id = "department">
+        Course:<select required id = "course">
                 <option value = "">Select one</option>
         <?php 
 			
-			$file = "../resource/*" + $_POST[$key] + ".csv";
+			$file = "../resource/*" . $_POST[$key] . ".csv";
 			echo $_POST[$key];
 			
 			
