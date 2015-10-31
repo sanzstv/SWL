@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require "/DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/fcn/parseCsvFile.php"; ?>
+<?php require "/DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/fcn/parseCourseList.php"; ?>
 <html>
 <head>
 <style>
@@ -27,7 +27,7 @@ th, td {
     $requestList = glob($requestListLocation);
     if( count($requestList) == 0 )
       die("There are currently no requests for ". $_SERVER['REMOTE_USER'] ." Department.");
-    $courseList = parseCsvFile($courseListLocation);
+    $courseList = parseCourseList($courseListLocation);
   ?>
   <p>Select a waitlist to view.<p>
   <table style="width:80%">
