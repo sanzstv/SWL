@@ -27,7 +27,7 @@ Department:<select required id = "department">
                 //parse file names
                 $depts = basename($file).PHP_EOL;
         ?>
-                 <option value="<?= $depts ?>"><?= $depts ?></option>
+                 <option name = "<?=$depts?>" value="<?= $depts ?>"><?= $depts ?></option>
          <?php
                 } ?>
         </select>
