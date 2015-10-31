@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require "/DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/fcn/parseCsvFile.php"; ?>
 <html>
 <head>
 <style>
@@ -15,38 +16,46 @@ th, td {
 <body>
   <h1>SCUWaitLister Admin Page</h1>
   <p>You are using this system as <?php echo $_SERVER['REMOTE_USER']; ?>.</p>
-  <p>Select a waitlist to view:<p>
-<table style="width:80%">
-  <tr>
-    <th>See waitlist</th>
-    <th>Section number</th>
-    <th>Course number</th>
-    <th>Course name</th>
-  </th>
-<?php
-$row=1;
-ini_set('auto_detect_line_endings', TRUE);
-if(($handle = fopen("../resource/COEN/courseList.csv", "r")) !== FALSE) {
-    while(($data= fgetcsv($handle, 1000, ",")) !== FALSE) {
-	$num = count($data);
-	for($c=0; $c<$num; $c+=3) {
-	    echo "<p>";
-	    echo "<tr>"; 
-	    echo "<td>"; 
-	    echo "<a href='view_waitlist.php'><button>Select</button></a>";
-	    foreach($data as $cell) {
-		echo "<td>" . htmlspecialchars($cell);
-	    }
-	    echo"</tr>\n";
-	    //echo "<a href='parseCSV.php'><button>$data[1]:$data[2] (Section: $data[0])</button></a>";
-	    }
+  <?php
+    $courseListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/courseList.csv";
+    $requestListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/request/*";
+    if( ! file_exists($courseListLocation))
+      die(
+        "The ". $_SERVER['REMOTE_USER'] ." Department has not uploaded a course list.<br />" .
+        "Please <a href='upload.php'>upload</a> a course list first.<br />"
+      );
+    $requestList = glob($requestListLocation);
+    if( count($requestList) == 0 )
+      die("There are currently no requests for ". $_SERVER['REMOTE_USER'] ." Department.");
+    $courseList = parseCsvFile($courseListLocation);
+  ?>
+  <p>Select a waitlist to view.<p>
+  <table style="width:80%">
+    <tr>
+      <th>See waitlist</th>
+      <th>Section number</th>
+      <th>Course number</th>
+      <th>Course name</th>
+    </tr>
+  <?php
+    $row=1;
+    ini_set('auto_detect_line_endings', TRUE);
+    foreach(glob($requestListLocation) as $request) {
+      $sectionNumber = basename($request, ".csv");
+      echo "<tr>";
+      echo
+        "<td>" .
+          "<form action='view_waitlist.php' method='post'>" .
+          "<button name='". basename($request) ."' value='". basename($request) ."'>view</button>" .
+          "</form>" .
+        "</td>";
+      echo "<td>". $sectionNumber ."</td>";
+      echo "<td>".$courseList[$sectionNumber][0]."</td>";
+      echo "<td>".$courseList[$sectionNumber][1]."</td>";
+      echo "</tr>";
     }
-    fclose($handle);
-}
-ini_set('auto_detect_line_endings', FALSE);
-?> 
-
-</table>	
+  ?> 
+  </table>	
 </body>
 </html>
 

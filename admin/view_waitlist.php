@@ -15,6 +15,7 @@ th, td {
 </head> 
 <body>
 
+<?php print_r($_POST); ?>
 <!--Define table headers-->
 <table style="width:80%">
   <tr>
@@ -26,9 +27,9 @@ th, td {
     <th>E-mail Address</th>
     <th>Reason for needing class</th>
   </tr>
-
 <!--PHP file that reads from CSV file and produces a table-->
 <?php
+/*
 $row = 1;
 ini_set('auto_detect_line_endings', TRUE);
 //Make sure we can actually open CSV file
@@ -50,6 +51,7 @@ if (($handle = fopen("../resource/COEN/request/12345.csv", "r")) !== FALSE) {
     fclose($handle);
 }
 ini_set('auto_detect_line_endings', FALSE);
+*/
 ?>
 
 </table>
