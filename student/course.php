@@ -21,8 +21,8 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
                 <option value = "">Select one</option>
         <?php 
 			
-			$file = "../resource/*" . $_POST[$key] . ".csv";
-			echo $_POST[$key];
+			$file = "../resource/*" . $_POST['department'] . ".csv";
+			echo $_POST['department'];
 			
 			
 
