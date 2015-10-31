@@ -18,7 +18,7 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 
 
 <form action="course.php" method = "post">
-Department:<select required id = "department">
+Department:<select required id = "department" name = "department">
         <option value = "">Select one</option>
 <?php
         //list departments with available waitlists
@@ -27,7 +27,7 @@ Department:<select required id = "department">
                 //parse file names
                 $depts = basename($file).PHP_EOL;
         ?>
-                 <option name = "<?=$depts?>" value="<?= $depts ?>"><?= $depts ?></option>
+                 <option value="<?= $depts ?>"><?= $depts ?></option>
          <?php
                 } ?>
         </select>
