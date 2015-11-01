@@ -18,18 +18,20 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 
 
 <form action="course.php" method = "post">
-Department:<select required id = "department" name = "department">
-        <option value = "">Select one</option>
-<?php
-        //list departments with available waitlists
-        foreach(glob("../resource/*") as $file)
-        {
-                //parse file names
-                $depts = basename($file).PHP_EOL;
-        ?>
+        Department:
+        <select required id = "department" name = "department">
+                <option value = "">Select one</option>
+                 <?php
+                //list departments with available waitlists
+                 foreach(glob("../resource/*") as $file)
+                 {
+                        //parse file names
+                        $depts = basename($file).PHP_EOL;
+                ?>
                  <option value="<?= $depts ?>"><?= $depts ?></option>
-         <?php
-                } ?>
+                <?php
+                } 
+                ?>
         </select>
         </br></br>
         <button type = "submit" value = "Submit">Submit</button>
@@ -37,5 +39,4 @@ Department:<select required id = "department" name = "department">
 </form>
 </body>
 
-<script type ="text/javascript"></script>
 </html>
