@@ -13,7 +13,7 @@
 <form action = "formCheck.php" method = "POST">
         Last Name:<input name = "first" label = "Last Name" type = "text" maxlength = "40" id ="fname" required = "required"\> </br>
         First Name:<input name = "last" label = "First Name" type = "text" maxlength = "30" id ="lname" required = "required"\></br>
-        Student ID Number:<input name = "studentid" label = "Student ID Number" type = "text" maxlength = "11" id = "studentid" value = "0000163542" required = "required"\></br>
+        Student ID Number:<input name = "studentid" label = "Student ID Number" type = "text" maxlength = "11" id = "studentid" value = "00000117281" required = "required"\></br>
         Graduation Year:<input name = "gradYear" label = "Graduation Year" type = "text" maxlength = "4" id = "gradYear" required = "required"\n></br>
         SCU Email Login:<input name = "email" label = "SCU Email Login" type = "text" maxlength = "43" id ="email" value="ex:jdoe" required = "required"\>@scu.edu</br>
         Reason for requiring enrollment (max. 500 characters)</br>
