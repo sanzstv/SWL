@@ -2,13 +2,16 @@
 <html>
 <body>
   <h1>SCUWaitLister Upload Confirmation Page</h1>
-  <p>You are using this system as <?php echo $_SERVER['REMOTE_USER']; ?>.</p>
+  <p>
+    You are using this system as the <?php echo $_SERVER['REMOTE_USER']; ?> Department.<br />
+    To change the Department, please restart the browser.
+  </p>
   <a href='index.php'><button>Return</button></a><br />
   <br />
   <?php
     if( ! isset($_FILES["coursList"]["tmp_name"] ) )
       die(
-        "Upload Failed. <br />" .
+        "Upload Failed. <br /><br />" .
         "Either you did not choose a file, or the file was unable to be uploaded.<br />" .
         "If it is the latter case, please contact the system administrator."
       );
@@ -27,7 +30,7 @@
         continue;
       if( count($data) != 3 )
         die(
-          "Upload Cancelled <br />" .
+          "Upload Cancelled.<br /><br />" .
           "Incorrect number of fields on line $lineNumber."
         );
       $courseSection = trim($data[0]);
@@ -41,7 +44,7 @@
         );
       if( strlen($courseNumber) != 3 || ! is_numeric($courseNumber) )
         die(
-          "Upload Cancelled <br /><br />" .
+          "Upload Cancelled.<br /><br />" .
           "Line $lineNumber's Course Number is not in correct format.<br />" .
           "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />"
         );
@@ -53,7 +56,7 @@
       $sectionIdArray[$courseSection] = true;
       if( ! fwrite($fw, "$courseSection,$courseNumber,$courseName\n") )
         die(
-          "Upload Failed <br /><br />" .
+          "Upload Failed.<br /><br />" .
           "Error writing file to server. Please contact the administrator."
         );
     }
