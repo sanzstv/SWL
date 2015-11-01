@@ -6,6 +6,12 @@
   <a href='index.php'><button>Return</button></a><br />
   <br />
   <?php
+    if( ! isset($_FILES["coursList"]["tmp_name"] ) )
+      die(
+        "Upload Failed. <br />" .
+        "Either you did not choose a file, or the file was unable to be uploaded.<br />" .
+        "If it is the latter case, please contact the system administrator."
+      );
     // actual file we will save
     $actFile = "../resource/" . $_SERVER['REMOTE_USER'] . "/courseList.csv";
     // uploaded file
