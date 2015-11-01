@@ -10,7 +10,7 @@
 <h2 class = "header">SCUWaitlister</h2>
 
 <h4 class = "des">Student Waitlist Request</h4>
-<form action = "request.php" method = "POST">
+<form action = "formCheck.php" method = "POST">
         Last Name:<input name = "first" label = "Last Name" type = "text" maxlength = "40" id ="fname" required = "required"\> </br>
         First Name:<input name = "last" label = "First Name" type = "text" maxlength = "30" id ="lname" required = "required"\></br>
         Student ID Number:<input name = "studentid" label = "Student ID Number" type = "text" maxlength = "11" id = "studentid" value = "0000163542" required = "required"\></br>
