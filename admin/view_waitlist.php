@@ -7,6 +7,7 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    text-align: center;
 }
 th, td {
     padding: 5px;
@@ -24,7 +25,6 @@ th, td {
       <td><?php echo $_POST['courseSection']; ?></td>
     </tr>
     <tr>
-      
       <td>Course Number</td>
       <td><?php echo $_POST['courseNumber']; ?></td>
     </tr>
@@ -36,10 +36,7 @@ th, td {
   </p>
   <?php
     if( ! file_exists($_POST['path']) )
-      die(
-        "The Request File (".$_POST['path'].") does not exist.<br />".
-        "Please go back to the main page to select correct request using the interface."
-      )
+      die("There are no requests for this course.");
   ?>
   <!--Define table headers-->
   <table style="width:80%">
@@ -54,31 +51,22 @@ th, td {
     </tr>
   <!--PHP file that reads from CSV file and produces a table-->
   <?php
-  /*
-  $row = 1;
-  ini_set('auto_detect_line_endings', TRUE);
-  //Make sure we can actually open CSV file
-  if (($handle = fopen("../resource/COEN/request/12345.csv", "r")) !== FALSE) {
-      //HOW DO I SELECT RIGHT CSV FILE??????
-      //scan through CSV file
-      while(($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
-    //Create new row and put CSV file data in it
-    echo "<tr>";
-    //label each row so we know where a person sits on the waitlist
-    echo "<td>" . $row;
-    //pick out individual values
-    foreach($data as $cell) {
-        echo "<td>" . htmlspecialchars($cell);
-    }
-    echo "</tr>\n";
+  $file = fopen($_POST['path'], "r");
+  $row = 0;
+  while(($request = fgetcsv($file)) !== false) {
     $row++;
-      }
-      fclose($handle);
+    echo "<tr>";
+    echo "<td>$row</td>";
+    echo "<td>$request[0]</td>";
+    echo "<td>$request[1]</td>";
+    echo "<td>$request[2]</td>";
+    echo "<td>$request[3]</td>";
+    echo "<td>$request[4]</td>";
+    echo "<td>$request[5]</td>";
+    echo "</tr>";
   }
-  ini_set('auto_detect_line_endings', FALSE);
-  */
+  fclose($file);
   ?>
-
   </table>
 </body>
 </html>
