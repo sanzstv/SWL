@@ -16,31 +16,29 @@
 
 A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
 
-	<form action="section.php" method = "post">
-		Course: <?php echo $_POST['department'];?>
+	<form action="waitlist.php" method = "post">
+        Course: <?php echo $_POST['department'];?>
 		<select required id = "course" name = "course">
-        		<option value = "">Select one</option>
+                <option value = "">Select one</option>
 			<?php 
-			
+			require('../fcn/parseCourseList.php');
 			$filename = '../resource/' . $_POST['department'] . '/courseList.csv';
 			//open course list
-			$file = fopen($filename,"r");
-			
-			while(!feof($file))
+			//$courses = array();
+			$courses = parseCourseList($filename);
+			foreach ($courses as $value)
 			{
-				//read list of courses from csv
-				$course = fgetcsv($file);
 			?>
 		
-			<option value="<?= $course[1] ?>"> <?= $course[1] ?> </option> 
+				<option value="<?= $value[0] ?>"> <?= $value[1],$value[0] ?> </option> 
 			<?php
 			}
 
-				// close the file connection
+			// close the file connection
 				fclose($file);
 			?>
-		 </select>
-		 <button type = "submit" value = "Submit">Submit</button>
+		<button type = "submit" value = "Submit">Submit</button>
+        </select>
         </br></br>
 
 
