@@ -18,6 +18,17 @@ th, td {
   <h1>SCUWaitLister Waitlist Viewing Page</h1>
   <p>You are using this system as <?php echo $_SERVER['REMOTE_USER']; ?>.</p>
   <a href='select_waitlist.php'><button>Return</button></a><br />
+  <?php
+    if(
+      ! isset(
+        $_POST['path'],
+        $_POST['courseSection'],
+        $_POST['courseNumber'],
+        $_POST['courseName']
+      )
+    )
+      die("<p>Please go back to select the waitlist to be viewed.</p>");
+  ?>
   <p>
   <table>
     <tr>
