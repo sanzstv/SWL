@@ -9,42 +9,37 @@
 
 <h2 class = "header">SCUWaitlister</h2>
 
-<h4 class = "des">Select Couse</h4>
+<h4 class = "des">Select Course</h4>
 
 
 <p>Select the department of the class waitlist you wish to enroll in.</br></br>
 
 A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
 
-	
-        Course:<select required id = "course">
+		<form action="section.php" method = "post">
+        Course: <?php echo $_POST['department'];?>
+		<select required id = "course" name = "course">
                 <option value = "">Select one</option>
         <?php 
 			
-			$file = "../resource/*" . $_POST['department'] . ".csv";
-			echo $_POST['department'];
-			
-			
-
-			//column to print, E would be 5th
-			$col = 1;
-
+			$filename = '../resource/' . $_POST['department'] . '/courseList.csv';
 			//open course list
-			$file = fopen($file,"r");
-
-			// while there are more lines, keep doing this
-			while(! feof($file))
-			{
-				// print out the given column of the line
-				$dept = fgetcsv($file)[$col];?>
-				<option value="<?= $dept['dept'] ?>"><?= $dept['dept'] ?></option>
+			$file = fopen($filename,"r");
 			
-			<?
+			while(!feof($file))
+			{
+				//read list of courses from csv
+				$course = fgetcsv($file);
+		?>
+		
+				<option value="<?= $course[1] ?>"> <?= $course[1] ?> </option> 
+		<?php
 			}
 
 			// close the file connection
 				fclose($file);
-			?>
+		?>
+		<button type = "submit" value = "Submit">Submit</button>
         </select>
         </br></br>
 
@@ -53,4 +48,5 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 
 <script type ="text/javascript"></script>
 </html>
+
 
