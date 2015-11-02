@@ -20,7 +20,14 @@
 <body>
   <h1>SCUWaitLister Course & Section Selection Page</h1>
 
+
+  <p>
+    Select the Section of the Course you wish to request for waitlisting.<br />
+    A full list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
+  </p>
+
   <a href='index.php'><button>Return</button></a><br />
+
   <?php
     if( ! isset($_POST['department']) )
       die("<p>Please select the department from the <a href='index.php'>department selection page</a></p>.");
@@ -30,11 +37,6 @@
     if( ! file_exists($filename))
       die("<p>The ". $_POST['department'] ." Department has not uploaded any course information.</p>");
   ?>
-
-  <p>
-    Select the Section of the Course you wish to request for waitlisting.<br />
-    A full list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
-  </p>
 
   <p><b>Department : <?php echo $_POST['department']; ?></b></p>
   <table>
@@ -68,7 +70,6 @@
         echo "<td>". $courseNumber ."</td>";
         echo "<td>". $courseName ."</td>";
         echo "</tr>";
-       //echo "<option value='$key'>$value[0] [$key] ($value[1])</option>";
       }
     ?>
    </table>
