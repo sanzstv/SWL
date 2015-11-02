@@ -28,7 +28,9 @@
       $lineNumber++;
       if( count($data) == 1 && $data[0] == null )
         continue;
-      if( count($data) != 3 )
+      if( count($data) > 0 && $data[0][0] == '#' )
+        continue;
+      if( count($data) < 3 )
         die(
           "Upload Cancelled.<br /><br />" .
           "Incorrect number of fields on line $lineNumber."
