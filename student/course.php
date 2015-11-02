@@ -11,7 +11,6 @@
 
 <h4 class = "des">Select Course</h4>
 
-
 <p>Select the department of the class waitlist you wish to enroll in.</br></br>
 
 A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
@@ -24,18 +23,10 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 			require('../fcn/parseCourseList.php');
 			$filename = '../resource/' . $_POST['department'] . '/courseList.csv';
 			//open course list
-			//$courses = array();
+			$courses = array();
 			$courses = parseCourseList($filename);
-			foreach ($courses as $value)
-			{
-			?>
-		
-				<option value="<?= $value[0] ?>"> <?= $value[1],$value[0] ?> </option> 
-			<?php
-			}
-
-			// close the file connection
-				fclose($file);
+			foreach ($courses as $key=>$value)
+       echo "<option value='$key'>$value[0] ($value[1])</option>";
 			?>
 		<button type = "submit" value = "Submit">Submit</button>
         </select>

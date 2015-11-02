@@ -25,7 +25,7 @@ Department:<select required id = "department" name = "department">
         foreach(glob("../resource/*") as $file)
         {
                 //parse file names
-                $depts = basename($file).PHP_EOL;
+                $depts = trim(basename($file).PHP_EOL);
         ?>
                  <option value="<?= $depts ?>"><?= $depts ?></option>
          <?php
