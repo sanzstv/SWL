@@ -23,8 +23,7 @@
   </p>
 
   <a href='index.php'><button>Return</button></a><br /><br />
-    
-  <?php
+    <?php
     if(
       ! isset(
         $_POST['department'],
@@ -69,7 +68,7 @@
     Student email <br />
     <input required type='email' name='email' id='email' placeholder='js@scu.edu' /> <br /><br />
     Reason for Request <br />
-    <textarea required name='reason' id='reason' cols='50' rows='10' placeholder='Your Reasons'></textarea><br /><br />
+    <textarea required maxlength='500' name='reason' id='reason' cols='50' rows='10' placeholder='Your Reasons (500 max)'></textarea><br /><br />
     <div class="g-recaptcha" data-sitekey="6LdLFRATAAAAAPM4TvuoxcJqFiVoAGdPTuBXe2iO"></div><br />
     <script src = 'https://www.google.com/recaptcha/api.js'></script>
     <button type = "submit" value = "submit">Submit Waitlist Request</button>
