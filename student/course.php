@@ -11,9 +11,10 @@
 
 <h4 class = "des">Select Course</h4>
 
-<p>Select the department of the class waitlist you wish to enroll in.</br></br>
-
-A list of classes for the current quarter can be found at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
+<p>
+  Select the Section of the Course you wish to request for waitlisting.<br />
+  The listing format is "CourseNumber [SectionNumber] (CourseName)".</br></br>
+  A full list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail.</a></p>
 
 	<form action="waitlist.php" method = "post">
         Course: <?php echo $_POST['department'];?>
@@ -25,8 +26,9 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 			//open course list
 			$courses = array();
 			$courses = parseCourseList($filename);
+      asort($courses);
 			foreach ($courses as $key=>$value)
-       echo "<option value='$key'>$value[0] ($value[1])</option>";
+       echo "<option value='$key'>$value[0] [$key] ($value[1])</option>";
 			?>
 		
         </select>
