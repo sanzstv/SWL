@@ -73,12 +73,12 @@ th, td {
     $row++;
     echo "<tr>";
     echo "<td>$row</td>";
-    echo "<td>$request[0]</td>";
-    echo "<td>$request[1]</td>";
-    echo "<td>$request[2]</td>";
-    echo "<td>$request[3]</td>";
-    echo "<td>$request[4]</td>";
-    echo "<td>$request[5]</td>";
+    echo "<td>".htmlspecialchars($request[0])."</td>";
+    echo "<td>".htmlspecialchars($request[1])."</td>";
+    echo "<td>".htmlspecialchars($request[2])."</td>";
+    echo "<td>".htmlspecialchars($request[3])."</td>";
+    echo "<td>".htmlspecialchars($request[4])."</td>";
+    echo "<td>".htmlspecialchars($request[5])."</td>";
     echo "</tr>";
   }
   fclose($file);
