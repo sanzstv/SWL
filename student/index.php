@@ -6,12 +6,12 @@
 <body>
   <h1>SCUWaitLister Department Selection</h1>
 
-  <a href='../index.html'><button>Return</button></a><br />
-
   <p>
     Select the department of the class in which you wish to be waitlisted in.</br>
     A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
   </p>
+
+  <a href='../index.html'><button>Return</button></a><br /><br />
 
   <form action="selection.php" method = "post">
     Department:
