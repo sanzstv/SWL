@@ -11,7 +11,7 @@
     </p>
     <a href='index.php'><button>Return</button></a><br />
     <p>Upload new course list for your department in CSV format: <br />
-    <span class = "example">sectionNumber, courseNumber, courseName<br />
+    <span class = "example">sectionNumber,courseNumber,courseName<br />
     i.e. 30991,174,Software Engineering</span></p>
     <form action='upload_process.php' method='post' enctype='multipart/form-data'>
       <input type='file' name='courseList' id='courseList' />
