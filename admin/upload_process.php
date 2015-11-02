@@ -9,7 +9,7 @@
   <a href='index.php'><button>Return</button></a><br />
   <br />
   <?php
-    if( ! isset($_FILES["coursList"]["tmp_name"] ) )
+    if( ! isset($_FILES["courseList"]["tmp_name"] ) )
       die(
         "Upload Failed. <br /><br />" .
         "Either you did not choose a file, or the file was unable to be uploaded.<br />" .
@@ -36,13 +36,15 @@
       $courseSection = trim($data[0]);
       $courseNumber = trim($data[1]);
       $courseName = trim($data[2]);
+      $courseName = preg_replace('/"/', "'", $courseName);
+      $courseName = '"' . $courseName . '"';
       if( strlen($courseSection) != 5 || ! is_numeric($courseSection) )
         die(
           "Upload Cancelled <br /><br />" .
           "Line $lineNumber's Section Number is not in correct format.<br />" .
           "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />"
         );
-      if( strlen($courseNumber) != 3 || ! is_numeric($courseNumber) )
+      if( strlen($courseNumber) > 3 || ! is_numeric($courseNumber) )
         die(
           "Upload Cancelled.<br /><br />" .
           "Line $lineNumber's Course Number is not in correct format.<br />" .
