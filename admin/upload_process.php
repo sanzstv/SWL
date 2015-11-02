@@ -27,6 +27,7 @@
 
     $fp = fopen($tmpFile, "r");
     $fw = fopen($actFile, "w");
+    while(!flock($fw, LOCK_EX)){};
     $lineNumber = 0;
     $sectionIdArray = array();
     while( ($data = fgetcsv($fp)) !== false ) {
@@ -37,7 +38,7 @@
         continue;
       if( count($data) < 3 )
         die(
-          "Upload Cancelled.<br /><br />" .
+          "Upload Cancelled. The current course list may be inconsistent.<br /><br />" .
           "Incorrect number of fields on line $lineNumber."
         );
       $courseSection = trim($data[0]);
@@ -47,14 +48,20 @@
       $courseName = '"' . $courseName . '"';
       if( strlen($courseSection) != 5 || ! is_numeric($courseSection) )
         die(
-          "Upload Cancelled <br /><br />" .
+          "Upload Cancelled. The current course list may be inconsistent.<br /><br />" .
           "Line $lineNumber's Section Number is not in correct format.<br />" .
           "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />"
         );
-      if( strlen($courseNumber) > 3 || ! is_numeric($courseNumber) )
+      if( preg_match("/[0-9]{1,4}[A-Ba-b]{0,1}/", $courseNumber) != 1 )
         die(
-          "Upload Cancelled.<br /><br />" .
+          "Upload Cancelled. The current course list may be inconsistent.<br /><br />" .
           "Line $lineNumber's Course Number is not in correct format.<br />" .
+          "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />"
+        );
+      if( $courseName == '""' )
+        die(
+          "Upload Cancelled. The current course list may be inconsistent.<br /><br />" .
+          "Line $lineNumber's Course Name is empty.<br />" .
           "Line $lineNumber : $courseSection, $courseNumber, $courseName<br />"
         );
       if(array_key_exists($courseSection, $sectionIdArray)) {
@@ -69,6 +76,7 @@
           "Error writing file to server. Please contact the administrator."
         );
     }
+    flock($fw, LOCK_UN);
     fclose($fw);
     fclose($fp);
 
