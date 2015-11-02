@@ -9,7 +9,12 @@
   <a href='index.php'><button>Return</button></a><br />
   <br />
   <?php
-    if( ! isset($_FILES["courseList"]["tmp_name"] ) )
+    if( 
+      ! isset($_FILES["courseList"]) ||
+      empty($_FILES["courseList"]) ||
+      ! isset($_FILES["courseList"]["tmp_name"] ) ||
+      empty($_FILES["courseList"]["tmp_name"] )
+    )
       die(
         "Upload Failed. <br /><br />" .
         "Either you did not choose a file, or the file was unable to be uploaded.<br />" .
