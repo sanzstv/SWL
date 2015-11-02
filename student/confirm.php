@@ -64,7 +64,7 @@
       );
     if( ! preg_match($idRegex, $_POST['studentId']) )
       die(
-        "ID is invalid : ". $_POST['lname'] ."<br />".
+        "ID is invalid : ". $_POST['studentId'] ."<br />".
         "Be sure to include all 11 digits.<br />" .
         "Use the browser's back button to go back."
       );
