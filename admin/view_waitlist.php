@@ -68,6 +68,8 @@ th, td {
   $file = fopen($_POST['path'], "r");
   $row = 0;
   while(($request = fgetcsv($file,0, ',', '"')) !== false) {
+    if(count($request) < 6)
+      continue;
     $row++;
     echo "<tr>";
     echo "<td>$row</td>";
