@@ -8,6 +8,30 @@
   <h1>SCUWaitLister Request Confirmation Page</h1>
 
   <?php
+    $captcha = "";
+    if(isset($_POST['g-recaptcha-response']))
+      $captcha = $_POST['g-recaptcha-response'];
+    if(!$captcha)
+      die(
+        "CAPTCHA Validation Failed.<br />" .
+        "Please use the browser's back button."
+      );
+    $response = json_decode(
+      file_get_contents(
+        "https://www.google.com/recaptcha/api/siteverify?secret=6LdLFRATAAAAAEwcCFP4vugEpWz19hwWV9kWxKa_&response=" .
+        $captcha .
+        "&remoteip=" .
+        $_SERVER['REMOTE_ADDR']
+      )
+    );
+    if($response->success==false)
+      die(
+        "CAPTCHA Validation Failed.<br />" .
+        "Please use the browser's back button."
+      );
+  ?>
+
+  <?php
     if( 
       !isset(
         $_POST['department'],
@@ -20,7 +44,10 @@
         $_POST['reason']
       )
     )
-      die("Some of the Fields were not Entered.");
+      die(
+        "Some of the Fields were not Entered.<br />" .
+        "Please use the browser's back button."
+      );
     $nameRegex = '/^[A-Za-z]+$/';
     $idRegex = '/^\d{11}$/';
     $yearRegex = '/^[2-9]\d{3}$/';
