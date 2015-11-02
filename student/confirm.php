@@ -88,12 +88,14 @@
     $requestFile = "../resource/". $_POST['department'] ."/request/". $_POST['section'] . ".csv";
     if( file_exists($requestFile) ) {
       $handle = fopen($requestFile, "r");
+      while(!flock($handle, LOCK_EX)) {};
       while( ($request = fgetcsv($handle)) !== false ) {
         if(count($request) < 6)
           continue;
         if($request[2] == $_POST['studentId'])
           die("<p>You are already on the waitlist, so you weren't added again.</p>");
       }
+      flock($handle, LOCK_UN);
       fclose($handle);
     }
     $requestString =
