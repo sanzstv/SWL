@@ -69,7 +69,7 @@ Last Name: <input name = "first" label = "Last Name" type = "text" maxlength = "
 First Name: <input name = "last" label = "First Name" type = "text" maxlength = "30"> <span class = "error">* <?php echo $firstErr;?></span><br><br>
 Student ID Number (i.e. 00000117281): <input name = "studentID" label = "Student ID Number" type = "text" pattern = "[0-9]{11}" maxlength = "11"> <span class = "error">*<?php echo $studentIDErr;?></span><br><br>
 Graduation Year (i.e. 2016): <input name = "gradYear" label = "Graduation Year" type = "text" pattern = "[0-9]{4}" maxlength = "4"> <span class = "error">*<?php echo $gradYearErr;?></span><br><br>
-SCU Email Login: <input name = "email" label = "SCU Email Login" type = "email" maxlength = "43" value="ex:jdoe@scu.edu"\> <span class = "error">*<?php echo $emailErr;?></span><br><br>
+SCU Email Login: <input name = "email" label = "SCU Email Login" type = "email" maxlength = "43"\> <span class = "error">*<?php echo $emailErr;?></span><br><br>
         Reason for requiring enrollment (max. 500 characters):</br>
         <textarea id = "reason" cols = "50" rows = "10" required = "required" value = "Please explain why you need to be enrolled in this class."></textarea> <span class = "error">*<?php echo $reasonErr;?></span><br><br>
         <div class="g-recaptcha" data-sitekey="6LdJGBATAAAAADdwl_wupyRNeiy1go0ZUk2bEu1P" required = "required"></div>
