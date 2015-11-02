@@ -37,8 +37,9 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 			// close the file connection
 				fclose($file);
 			?>
-		<button type = "submit" value = "Submit">Submit</button>
+		
         </select>
+        <button type = "submit" value = "Submit">Submit</button>
         </br></br>
 
 
