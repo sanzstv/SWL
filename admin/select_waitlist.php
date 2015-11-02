@@ -29,12 +29,14 @@
     $requestListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/request/*";
     if( ! file_exists($courseListLocation))
       die(
+        "<p>" .
         "The ". $_SERVER['REMOTE_USER'] ." Department has not uploaded a course list.<br />" .
-        "Please <a href='upload.php'>upload</a> a course list first.<br />"
+        "Please <a href='upload.php'>upload</a> a course list first.<br />" .
+        "</p>"
       );
     $requestList = glob($requestListLocation);
     if( count($requestList) == 0 )
-      die("There are currently no requests for ". $_SERVER['REMOTE_USER'] ." Department.");
+      die("<p>There are currently no requests for ". $_SERVER['REMOTE_USER'] ." Department.</p>");
     $courseList = parseCourseList($courseListLocation);
   ?>
   <p>Select a waitlist to view.<p>
@@ -47,7 +49,7 @@
     </tr>
   <?php
     $row=1;
-    ini_set('auto_detect_line_endings', TRUE);
+    //ini_set('auto_detect_line_endings', TRUE);
     foreach(glob($requestListLocation) as $request) {
       $sectionNumber = basename($request, ".csv");
       $courseNumber = $courseList[$sectionNumber][0];

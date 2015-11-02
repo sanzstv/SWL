@@ -67,7 +67,11 @@
     fclose($fw);
     fclose($fp);
 
+    $requestListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/request/*";
+    foreach(glob($requestListLocation) as $request)
+      unlink($request);
     echo "<br />Upload Success<br />";
+
   ?>
 </body>
 </html>

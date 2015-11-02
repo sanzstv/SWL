@@ -50,7 +50,7 @@ th, td {
   </p>
   <?php
     if( ! file_exists($_POST['path']) )
-      die("There are no requests for this course.");
+      die("<p>There are no requests for this course.</p>");
   ?>
   <!--Define table headers-->
   <table style="width:80%">
