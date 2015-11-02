@@ -3,6 +3,9 @@
 <html>
 <head>
 <style>
+  table {
+    width:80%;
+  }
   table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
@@ -35,7 +38,7 @@
     $courseList = parseCourseList($courseListLocation);
   ?>
   <p>Select a waitlist to view.<p>
-  <table style="width:80%">
+  <table>
     <tr>
       <th>Open</th>
       <th>Section Number</th>
