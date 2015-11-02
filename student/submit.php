@@ -17,7 +17,12 @@
 <body>
   <h1>SCUWaitLister Waitlist Submission Page</h1>
 
-  <a href='index.php'><button>Return</button></a><br />
+  <p>
+    Please fill out the following form.<br />
+    All information is required.
+  </p>
+
+  <a href='index.php'><button>Return</button></a><br /><br />
     
   <?php
     if(
@@ -30,10 +35,7 @@
     )
       die("<p>Please go back to select the waitlist to be viewed.</p>");
   ?>
-  <p>
-    Please fill out the following form.<br />
-    All information is required.
-  </p>
+
   <table>
     <tr>
       <td>Department</td>
@@ -54,14 +56,21 @@
   </table>
   <br /><br />
   <form action = "confirm.php" method = "POST">
-  <input required type='text' name='fname' id='fname' placeholder='First Name' /> <br /><br />
-  <input required type='text' name='lname' id='lname' placeholder='Last Name' /> <br /> <br />
-  <input required type='text' name='studentId' id='studentId' placeholder='ID (e.g. 00000123456)' /> <br /> <br />
-  <input required type='text' name='year' id='year' placeholder='Graduation Year (e.g. 2025)' /> <br /> <br />
-  <input required type='email' name='email' id='email' placeholder='email (e.g. js@scu.edu)' /> <br /><br />
-  <textarea required name='reason' id='reason' cols='50' rows='10' placeholder='Reason for Request'></textarea><br /><br />
-  <button type = "submit" value = "submit">Submit Waitlist Request</button>
-
+    <input type='hidden' name='section' value='<?php echo $_POST['courseSection']; ?>' />
+    <input type='hidden' name='department' value='<?php echo $_POST['department']; ?>' />
+    First Name <br />
+    <input required type='text' name='fname' id='fname' placeholder='John' /> <br /><br />
+    Last Name <br />
+    <input required type='text' name='lname' id='lname' placeholder='Smith' /> <br /> <br />
+    Student ID <br />
+    <input required type='text' name='studentId' id='studentId' placeholder='00000123456' /> <br /> <br />
+    Graduation Year <br />
+    <input required type='text' name='year' id='year' placeholder='2025' /> <br /> <br />
+    Student email <br />
+    <input required type='email' name='email' id='email' placeholder='js@scu.edu' /> <br /><br />
+    Reason for Request <br />
+    <textarea required name='reason' id='reason' cols='50' rows='10' placeholder='Your Reasons'></textarea><br /><br />
+    <button type = "submit" value = "submit">Submit Waitlist Request</button>
   </form>
 
 </body>
