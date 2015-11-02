@@ -94,6 +94,7 @@
       fclose($handle);
     }
     $requestString =
+      "\n" .
       $_POST['lname'] .",".
       $_POST['fname'] .",".
       $_POST['studentId'] .",".
