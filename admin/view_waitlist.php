@@ -67,7 +67,7 @@ th, td {
   <?php
   $file = fopen($_POST['path'], "r");
   $row = 0;
-  while(($request = fgetcsv($file)) !== false) {
+  while(($request = fgetcsv($file,0, ',', '"')) !== false) {
     $row++;
     echo "<tr>";
     echo "<td>$row</td>";
