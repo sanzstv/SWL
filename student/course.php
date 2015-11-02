@@ -28,8 +28,9 @@ A list of classes for the current quarter can be found at <a href="http://www.sc
 			foreach ($courses as $key=>$value)
        echo "<option value='$key'>$value[0] ($value[1])</option>";
 			?>
-		<button type = "submit" value = "Submit">Submit</button>
+		
         </select>
+        <button type = "submit" value = "Submit">Submit</button>
         </br></br>
 
 
