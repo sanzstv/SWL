@@ -9,6 +9,7 @@
   <a href='index.php'><button>Return</button></a><br />
   <br />
   <?php
+    ini_set("auto_detect_line_endings", true);
     if( 
       ! isset($_FILES["courseList"]) ||
       empty($_FILES["courseList"]) ||
