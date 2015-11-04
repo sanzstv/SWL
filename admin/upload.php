@@ -12,7 +12,7 @@
     <a href='index.php'><button>Return</button></a><br />
     <p>
       Upload new course list for your department in CSV format.<br />
-      Please view the <a href='sampleCourseList.csv'>sample course</a> for formatting.<br />
+      Please view the <a href='sampleCourseList.csv' download='sameple.csv'>sample list</a> for formatting.<br />
       WARNING : Uploading a new course list will delete all existing waitlist requests.
     </p>
     <form action='upload_process.php' method='post' enctype='multipart/form-data'>
