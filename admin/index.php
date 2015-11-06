@@ -2,8 +2,12 @@
 <html>
   <body>
     <h1>SCUWaitLister Admin Page</h1>
+    <?php
+      require "../fcn/getDepartment.php";
+      $theDepartment = getDepartment();
+    ?>
     <p>
-      You are using this system as the <?php echo $_SERVER['REMOTE_USER']; ?> Department.<br />
+      You are using this system as the <?php echo $theDepartment; ?> Department.<br />
       To change the Department, please restart the browser.
     </p>
     <a href='../index.html'><button>Return</button></a>

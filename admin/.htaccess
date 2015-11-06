@@ -1,5 +1,13 @@
+
+
 AuthType Basic
 AuthName "Password Protected"
 AuthUserFile /DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/admin/.htpasswd
 Require Valid-User
+
+AddType application/php .php
+Action application/php /~tchen/cgiTest/cgi-bin/php-cgi.cgi
+
+
+
 
