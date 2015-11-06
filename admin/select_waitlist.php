@@ -19,24 +19,28 @@
 
 <body>
   <h1>SCUWaitLister Waitlist Selection Page Page</h1>
+  <?php
+    require "../fcn/getDepartment.php";
+    $theDepartment = getDepartment();
+  ?>
   <p>
-    You are using this system as the <?php echo $_SERVER['REMOTE_USER']; ?> Department.<br />
+    You are using this system as the <?php echo $_SERVER['REDIRECT_REMOTE_USER']; ?> Department.<br />
     To change the Department, please restart the browser.
   </p>
   <a href='index.php'><button>Return</button></a><br />
   <?php
-    $courseListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/courseList.csv";
-    $requestListLocation = "../resource/". $_SERVER['REMOTE_USER'] ."/request/*";
+    $courseListLocation = "../resource/". $theDepartment ."/courseList.csv";
+    $requestListLocation = "../resource/". $theDepartment ."/request/*";
     if( ! file_exists($courseListLocation))
       die(
         "<p>" .
-        "The ". $_SERVER['REMOTE_USER'] ." Department has not uploaded a course list.<br />" .
+        "The ". $theDepartment ." Department has not uploaded a course list.<br />" .
         "Please <a href='upload.php'>upload</a> a course list first.<br />" .
         "</p>"
       );
     $requestList = glob($requestListLocation);
     if( count($requestList) == 0 )
-      die("<p>There are currently no requests for ". $_SERVER['REMOTE_USER'] ." Department.</p>");
+      die("<p>There are currently no requests for ". $theDepartment ." Department.</p>");
     $courseList = parseCourseList($courseListLocation);
   ?>
   <p>Select a waitlist to view.<p>

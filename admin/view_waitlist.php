@@ -16,8 +16,12 @@ th, td {
 </head> 
 <body>
   <h1>SCUWaitLister Waitlist Viewing Page</h1>
+  <?php
+    require "../fcn/getDepartment.php";
+    $theDepartment = getDepartment();
+  ?>
   <p>
-    You are using this system as the <?php echo $_SERVER['REMOTE_USER']; ?> Department.<br />
+    You are using this system as the <?php echo $theDepartment; ?> Department.<br />
     To change the Department, please restart the browser.
   </p>
   <a href='select_waitlist.php'><button>Return</button></a><br />
