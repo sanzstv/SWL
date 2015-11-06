@@ -64,7 +64,7 @@
       );
     if( ! preg_match($idRegex, $_POST['studentId']) )
       die(
-        "ID is invalid : ". $_POST['lname'] ."<br />".
+        "ID is invalid : ". $_POST['studentId'] ."<br />".
         "Be sure to include all 11 digits.<br />" .
         "Use the browser's back button to go back."
       );
@@ -88,12 +88,18 @@
     $requestFile = "../resource/". $_POST['department'] ."/request/". $_POST['section'] . ".csv";
     if( file_exists($requestFile) ) {
       $handle = fopen($requestFile, "r");
-      while( ($request = fgetcsv($handle)) !== false )
+      while(!flock($handle, LOCK_EX)) {};
+      while( ($request = fgetcsv($handle)) !== false ) {
+        if(count($request) < 6)
+          continue;
         if($request[2] == $_POST['studentId'])
           die("<p>You are already on the waitlist, so you weren't added again.</p>");
+      }
+      flock($handle, LOCK_UN);
       fclose($handle);
     }
     $requestString =
+      "\n" .
       $_POST['lname'] .",".
       $_POST['fname'] .",".
       $_POST['studentId'] .",".

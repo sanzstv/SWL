@@ -1,0 +1,10 @@
+# Lines beginning with a # is a comment.
+# Format is as follows.
+# sectionNumber,courseNumber,courseName
+# Below is a basic example.
+98765,174,Software Engineering
+# If you need to include commas, must put the line in quotes.
+# See below for example.
+# If using an Application like Excel, it will usually put the quotes in for you.
+12345,194,"Senior Design, Part 1"
+
