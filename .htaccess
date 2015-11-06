@@ -1,0 +1,2 @@
+AddType application/php .php
+Action application/php /~tchen/cgiTest/cgi-bin/php-cgi.cgi
