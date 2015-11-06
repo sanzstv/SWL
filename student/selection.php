@@ -23,14 +23,14 @@
 
   <p>
     Select the Section of the Course you wish to request for waitlisting.<br />
-    A full list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
+    A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
   </p>
 
   <a href='index.php'><button>Return</button></a><br />
 
   <?php
     if( ! isset($_POST['department']) )
-      die("<p>Please select the department from the <a href='index.php'>department selection page</a></p>.");
+      die("<p>Please select the department from the <a href='index.php'>department selection page</a>.</p>");
 
     require('../fcn/parseCourseList.php');
     $filename = '../resource/' . $_POST['department'] . '/courseList.csv';
@@ -73,17 +73,7 @@
       }
     ?>
    </table>
-   <?php die(); ?>
-  <form action="submit.php" method = "post">
-    <select required id = "course" name = "course">
-      <option value = "">Select One</option>
-    </select>
-    <button type = "submit" value = "submit">Submit</button>
-    </br></br>
-  </form>
 </body>
-
-<script type ="text/javascript"></script>
 </html>
 
 
