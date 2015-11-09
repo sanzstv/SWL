@@ -7,11 +7,11 @@
 </head>
 
 <body>
-	<div id = "head">
+	<div class = "head">
 		<h1>SCUWaitLister</h1>
 
 	</div>
-	<div id = "content">
+	<div class = "content">
   <h2>SCUWaitLister Request Confirmation Page</h2>
 
   <?php

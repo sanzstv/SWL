@@ -2,11 +2,7 @@ body{
 	font-family:Verdana;
 }
 
-#page{
-	width:100%;
-}
-
-#head{
+.head{
 	background-color:#FAC0C0;
 	width:100%;
 	border:2px solid black;
@@ -14,7 +10,7 @@ body{
 	clear:both;
 }
 
-#content{
+.content{
 	width: 100%;
 	border-style: solid;
     border-width: 0px 2px 2px 2px;
@@ -125,11 +121,11 @@ p,h2,#form_wrapper{
 button{
 	font-size:1.5em;
 }
-#form_wrapper{
+.form_wrapper{
 	padding:20px;
 	
 }
-#section{
+.section{
 	float:left;
 	padding:10px;
 }

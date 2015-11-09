@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
 <head>
   <title>Department Selection | SCUWaitlister</title>
   <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 
 </head>
 <body>
-	<div id = "head">
+	<div class = "head">
 		<h1>SCUWaitLister</h1>
 
 	</div>
 	
-	<div id = "content">
+	<div class = "content">
 	<h2>Department Selection</h2>
 
 	<p>
@@ -20,7 +20,7 @@
 	</p>
 
 
-	<div id = "form_wrapper">
+	<div class = "form_wrapper">
 	<form action="selection.php" method = "post">
 	<a class = "return" href='../index.html'>&lt;&lt;Return</a><br /><br />
 	

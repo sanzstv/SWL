@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html>
 <head>
   <title>Course Selection | SCUWaitlister</title>
     <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
@@ -13,11 +13,11 @@
 </head>
 
 <body>
-	<div id = "head">
+	<div class = "head">
 		<h1>SCUWaitLister</h1>
 
 	</div>
-	<div id = "content">
+	<div class = "content">
   <h2>SCUWaitLister Course & Section Selection Page</h2>
 
 

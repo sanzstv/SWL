@@ -8,11 +8,11 @@
 </head>
 
 <body>
-	<div id = "head">
+	<div class = "head">
 		<h1>SCUWaitLister</h1>
 
 	</div>
-	<div id = "content">
+	<div class = "content">
   <h1>SCUWaitLister Waitlist Submission Page</h1>
 
   <p>
