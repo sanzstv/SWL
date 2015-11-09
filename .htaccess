@@ -1,2 +1,3 @@
 AddType application/php .php
-Action application/php /~tchen/cgiTest/cgi-bin/php-cgi.cgi
+Action application/php /~tchen/cgi-bin/php-cgi.cgi
+#Action application/php /~tchen/COEN/174/SCUWaitLister/cgi-bin/php-cgi.cgi
