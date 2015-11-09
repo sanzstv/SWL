@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Students | SCUWaitlister</title>
-  <style>
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-    }
-    th, td {
-        padding: 5px;
-    }
-  </style>
+  <title>Waitlist Request | SCUWaitlister</title>
+      <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+
+
 </head>
 
 <body>
+	<div id = "head">
+		<h1>SCUWaitLister</h1>
+
+	</div>
+	<div id = "content">
   <h1>SCUWaitLister Waitlist Submission Page</h1>
 
   <p>
@@ -22,7 +20,7 @@
     All information is required.
   </p>
 
-  <a href='index.php'><button>Return</button></a><br /><br />
+	<a class = "return" href='../student/index.php'>&lt;&lt;Return</a><br /><br />
     <?php
     if(
       ! isset(
@@ -71,8 +69,8 @@
     <textarea required maxlength='500' name='reason' id='reason' cols='50' rows='10' placeholder='Your Reasons (500 max)'></textarea><br /><br />
     <div class="g-recaptcha" data-sitekey="6LdLFRATAAAAAPM4TvuoxcJqFiVoAGdPTuBXe2iO"></div><br />
     <script src = 'https://www.google.com/recaptcha/api.js'></script>
-    <button type = "submit" value = "submit">Submit Waitlist Request</button>
+    <button class = "submit" type = "submit" value = "submit">Submit Waitlist Request</button>
   </form>
-
+	</div>
 </body>
 </html>

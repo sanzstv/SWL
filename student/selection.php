@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-  <title>Students | SCUWaitlister</title>
+  <title>Course Selection | SCUWaitlister</title>
+    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+
   <style>
     table {
       width:80%;
     }
-    table, th, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      text-align: center;
-    }
-    th, td {
-      padding: 5px;
-    }
+   
   </style>
 </head>
 
 <body>
-  <h1>SCUWaitLister Course & Section Selection Page</h1>
+	<div id = "head">
+		<h1>SCUWaitLister</h1>
+
+	</div>
+	<div id = "content">
+  <h2>SCUWaitLister Course & Section Selection Page</h2>
 
 
   <p>
@@ -26,12 +26,11 @@
     A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
   </p>
 
-  <a href='index.php'><button>Return</button></a><br />
+	<a class = "return" href='../student/index.php'>&lt;&lt;Return</a><br /><br />
 
   <?php
     if( ! isset($_POST['department']) )
       die("<p>Please select the department from the <a href='index.php'>department selection page</a>.</p>");
-
     require('../fcn/parseCourseList.php');
     $filename = '../resource/' . $_POST['department'] . '/courseList.csv';
     if( ! file_exists($filename))
@@ -63,7 +62,7 @@
             "<input type='hidden' name='courseSection' value='". $sectionNumber ."' />" .
             "<input type='hidden' name='courseNumber' value='". $courseNumber ."' />".
             "<input type='hidden' name='courseName' value='". $courseName ."' />".
-            "<input type='submit' value='Request' />" .
+            "<input type='submit' class = 'request' value='Request' />" .
             "</form>" .
           "</td>";
         echo "<td>". $sectionNumber ."</td>";
@@ -73,7 +72,7 @@
       }
     ?>
    </table>
+   </div>
 </body>
 </html>
-
 

@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head>
-  <title>Students | SCUWaitlister</title>
+  <title>Department Selection | SCUWaitlister</title>
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+
 </head>
 <body>
-  <h1>SCUWaitLister Department Selection</h1>
+	<div id = "head">
+		<h1>SCUWaitLister</h1>
 
-  <p>
-    Select the department of the class in which you wish to be waitlisted in.</br>
-    A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
-  </p>
+	</div>
+	
+	<div id = "content">
+	<h2>Department Selection</h2>
 
-  <a href='../index.html'><button>Return</button></a><br /><br />
+	<p>
+		Select the department of the class in which you wish to be waitlisted in.</br>
+		A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
+	</p>
 
-  <form action="selection.php" method = "post">
+
+	<div id = "form_wrapper">
+	<form action="selection.php" method = "post">
+	<a class = "return" href='../index.html'>&lt;&lt;Return</a><br /><br />
+	
     Department:
     <select required id = "department" name = "department">
       <option value = "">Select One</option>
@@ -25,8 +35,10 @@
       ?>
     </select>
     </br></br>
-    <button type = "submit" value = "Submit">Submit</button>
+    <button type = "submit" class = "submit" value = "Submit">Submit</button>
 
-  </form>
-</body>
+	</form>
+	</div>
+	</div>
+  </body>
 </html>
