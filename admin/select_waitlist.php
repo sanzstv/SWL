@@ -3,9 +3,9 @@
 <html>
 <head>
 
-		<title><?php echo $theDepartment; ?> Course List | SCUWaitLister</title>
+		<title><?php echo getDepartment(); ?> Course List | SCUWaitLister</title>
 		
-		<link rel = "stylesheet" type = "text/css" href = "css/style.css">
+		<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 
 <style>
   table {

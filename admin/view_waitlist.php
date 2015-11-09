@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
+	<title> View Waitlist| SCUWaitLister</title>
 		
-	<link rel = "stylesheet" type = "text/css" href = "css/style.css">
+	<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 <style>
 
 
@@ -31,7 +31,7 @@ th, td {
     You are using this system as the <?php echo $theDepartment; ?> Department.<br />
     To change the Department, please restart the browser.
   </p>
-  <a href='select_waitlist.php'><button>Return</button></a><br />
+  <a class = 'return' href='select_waitlist.php'><<Return</a><br />
   <?php
     if(
       ! isset(
