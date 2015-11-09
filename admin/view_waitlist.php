@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
+		
+	<link rel = "stylesheet" type = "text/css" href = "css/style.css">
 <style>
 
 
@@ -15,6 +18,10 @@ th, td {
 </style>
 </head> 
 <body>
+	<div class = "head">
+			<h1>SCUWaitLister</h1>
+		</div>
+		<div class = "content">
   <h1>SCUWaitLister Waitlist Viewing Page</h1>
   <?php
     require "../fcn/getDepartment.php";
@@ -88,5 +95,6 @@ th, td {
   fclose($file);
   ?>
   </table>
+</div>
 </body>
 </html>
