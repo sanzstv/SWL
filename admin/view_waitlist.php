@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> <?php echo $theDepartment; echo $courseNumber; echo ' -'; echo $courseSection;?>Main Page | SCUWaitLister</title>
+	<title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
 		
 	<link rel = "stylesheet" type = "text/css" href = "css/style.css">
 <style>
