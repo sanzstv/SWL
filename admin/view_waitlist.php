@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 	<title> View Waitlist| SCUWaitLister</title>
 		
 	<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+=======
+	<title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
+		
+	<link rel = "stylesheet" type = "text/css" href = "css/style.css">
+>>>>>>> eda462fcbae3fa1313480aacbf581a240d29070a
 <style>
 
 

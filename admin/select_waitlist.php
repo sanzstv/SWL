@@ -3,9 +3,15 @@
 <html>
 <head>
 
+<<<<<<< HEAD
 		<title><?php echo getDepartment(); ?> Course List | SCUWaitLister</title>
 		
 		<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+=======
+		<title><?php echo $theDepartment; ?> Course List | SCUWaitLister</title>
+		
+		<link rel = "stylesheet" type = "text/css" href = "css/style.css">
+>>>>>>> eda462fcbae3fa1313480aacbf581a240d29070a
 
 <style>
   table {
