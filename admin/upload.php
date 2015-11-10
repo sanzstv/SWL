@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Upload Courselist| SCUWaitLister</title>
-		
-	<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-  <style>
-    .example{color: #848484;}
-  </style>
+  <title> Upload Courselist| SCUWaitLister</title>
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
  </head>
   <body>
     <h2>SCUWaitLister Update Course Page</h2>
@@ -18,7 +14,7 @@
       You are using this system as the <?php echo $theDepartment; ?> Department.<br />
       To change the Department, please restart the browser.
     </p>
-    <a class = 'return' href='index.php'><<Return</a><br />
+    <a class = 'return' href='index.php'>Return</a><br />
     <p>
       Upload new course list for your department in CSV format.<br />
       Please view the <a href='sampleCourseList.csv' download='sameple.csv'>sample list</a> for formatting.<br />

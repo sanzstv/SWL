@@ -26,7 +26,7 @@
     A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
   </p>
 
-	<a class = "return" href='../student/index.php'>&lt;&lt;Return</a><br /><br />
+	<a class = "return" href='../student/index.php'>Return</a><br /><br />
 
   <?php
     if( ! isset($_POST['department']) )

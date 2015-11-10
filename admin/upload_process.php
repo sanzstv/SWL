@@ -21,7 +21,7 @@
     You are using this system as the <?php echo $theDepartment; ?> Department.<br />
     To change the Department, please restart the browser.
   </p>
-  <a href='index.php' class = 'return'><<Return</a><br />
+  <a href='index.php' class = 'return'>Return</a><br />
   <br />
   <?php
     ini_set("auto_detect_line_endings", true);

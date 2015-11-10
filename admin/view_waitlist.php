@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> View Waitlist| SCUWaitLister</title>
-		
-	<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+  <title> View Waitlist| SCUWaitLister</title>
+    
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 
-	<title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
-		
-	<link rel = "stylesheet" type = "text/css" href = "css/style.css">
+  <title> <?php echo $theDepartment; echo $_POST['courseNumber']; echo ' -'; echo $_POST['courseSection'];?>Main Page | SCUWaitLister</title>
+    
+  <link rel = "stylesheet" type = "text/css" href = "css/style.css">
 <style>
 
 
@@ -22,10 +22,10 @@ th, td {
 </style>
 </head> 
 <body>
-	<div class = "head">
-			<h1>SCUWaitLister</h1>
-		</div>
-		<div class = "content">
+  <div class = "head">
+      <h1>SCUWaitLister</h1>
+    </div>
+    <div class = "content">
   <h1>SCUWaitLister Waitlist Viewing Page</h1>
   <?php
     require "../fcn/getDepartment.php";
@@ -35,7 +35,7 @@ th, td {
     You are using this system as the <?php echo $theDepartment; ?> Department.<br />
     To change the Department, please restart the browser.
   </p>
-  <a class = 'return' href='select_waitlist.php'><<Return</a><br />
+  <a class = 'return' href='select_waitlist.php'>Return</a><br />
   <?php
     if(
       ! isset(
