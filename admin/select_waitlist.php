@@ -5,9 +5,7 @@
   <title>Course List | SCUWaitLister</title>
   <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 </head>
-
 <body>
-
   <div class = "head">
     <h1>SCUWaitLister</h1>
   </div>
