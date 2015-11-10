@@ -5,6 +5,10 @@
   <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
  </head>
   <body>
+  <div class = "head">
+      <h1>SCUWaitLister</h1>
+    </div>
+    <div class = "content">
     <h2>SCUWaitLister Update Course Page</h2>
     <?php
       require "../fcn/getDepartment.php";
@@ -24,5 +28,6 @@
       <input class = 'return' type='file' name='courseList' id='courseList' />
       <input class = 'submit' type='submit' value='Upload' />
     </form>
-  </body>
+  </div>
+</body>
 </html>
