@@ -2,32 +2,20 @@
 <html>
 <head>
   <title>Course Selection | SCUWaitlister</title>
-    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-
-  <style>
-    table {
-      width:80%;
-    }
-   
-  </style>
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 </head>
 
 <body>
-	<div class = "head">
-		<h1>SCUWaitLister</h1>
-
-	</div>
-	<div class = "content">
+  <div class = "head">
+    <h1>SCUWaitLister</h1>
+  </div>
+  <div class = "content">
   <h2>SCUWaitLister Course & Section Selection Page</h2>
-
-
   <p>
     Select the Section of the Course you wish to request for waitlisting.<br />
     A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
   </p>
-
-	<a class = "return" href='../student/index.php'>Return</a><br /><br />
-
+  <a class = "return" href='../student/index.php'>Return</a><br /><br />
   <?php
     if( ! isset($_POST['department']) )
       die("<p>Please select the department from the <a href='index.php'>department selection page</a>.</p>");

@@ -2,7 +2,6 @@
 <html>
 	<head>
 		<title>Administrator Page| SCUWaitLister</title>
-		
 		<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 	</head>
   <body>

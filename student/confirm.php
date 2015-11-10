@@ -2,16 +2,14 @@
 <html>
 <head>
   <title>Request Submitted | SCUWaitlister</title>
-        <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 </head>
-
 <body>
-	<div class = "head">
-		<h1>SCUWaitLister</h1>
+  <div class = "head">
+    <h1>SCUWaitLister</h1>
 
-	</div>
-	<div class = "content">
+  </div>
+  <div class = "content">
   <h2>SCUWaitLister Request Confirmation Page</h2>
 
   <?php
@@ -89,7 +87,7 @@
     $_POST['reason'] = '"' . $_POST['reason'] . '"';
   ?>
   
-	<a class = "return" href='../student/index.php'>&lt;&lt;Return</a><br /><br />
+  <a class = "return" href='../student/index.php'>Return</a><br /><br />
 
   <?php
     $requestFile = "../resource/". $_POST['department'] ."/request/". $_POST['section'] . ".csv";
@@ -121,6 +119,6 @@
     You have been added to the waitlist.<br />
     You will be contacted via email if space becomes available.
   </p>
-	</div>
+  </div>
 </body>
 </html>

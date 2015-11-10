@@ -45,7 +45,7 @@
       </tr>
       <?php
         $row=1;
-        //ini_set('auto_detect_line_endings', TRUE);
+        ini_set('auto_detect_line_endings', TRUE);
         foreach(glob($requestListLocation) as $request) {
           $sectionNumber = basename($request, ".csv");
           $courseNumber = $courseList[$sectionNumber][0];
@@ -58,7 +58,7 @@
               "<input type='hidden' name='courseSection' value='". $sectionNumber ."' />" .
               "<input type='hidden' name='courseNumber' value='". $courseNumber ."' />".
               "<input type='hidden' name='courseName' value='". $courseName ."' />".
-              "<input class = 'submit' type='submit' value='view' />" .
+              "<input class = 'request' type='submit' value='view' />" .
               "</form>" .
             "</td>";
           echo "<td>". $sectionNumber ."</td>";
