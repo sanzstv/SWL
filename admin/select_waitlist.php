@@ -2,22 +2,7 @@
 <?php require "/DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/fcn/parseCourseList.php"; ?>
 <html>
 <head>
-    <title><?php echo getDepartment(); ?> Course List | SCUWaitLister</title>
     <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-    <title><?php echo $theDepartment; ?> Course List | SCUWaitLister</title>
-    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
-<style>
-  table {
-    width:80%;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-  }
-  th, td {
-    padding: 5px;
-  }
 </style>
 </head>
 
