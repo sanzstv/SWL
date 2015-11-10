@@ -30,7 +30,7 @@
       die("<p>Please go back to select the waitlist to be viewed.</p>");
   ?>
 
-  <table>
+  <table style='width:30%'>
     <tr>
       <td>Department</td>
       <td><?php echo $_POST['department']; ?></td>
