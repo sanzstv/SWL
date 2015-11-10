@@ -3,9 +3,6 @@
 <head>
   <title> Upload Courselist| SCUWaitLister</title>
   <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-  <style>
-    .example{color: #848484;}
-  </style>
  </head>
   <body>
     <h2>SCUWaitLister Update Course Page</h2>

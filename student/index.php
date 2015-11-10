@@ -6,24 +6,22 @@
 
 </head>
 <body>
-	<div class = "head">
-		<h1>SCUWaitLister</h1>
+  <div class = "head">
+    <h1>SCUWaitLister</h1>
+  </div>
+  
+  <div class = "content">
+  <h2>Department Selection</h2>
 
-	</div>
-	
-	<div class = "content">
-	<h2>Department Selection</h2>
+  <p>
+    Select the department of the class in which you wish to be waitlisted in.</br>
+    A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
+  </p>
 
-	<p>
-		Select the department of the class in which you wish to be waitlisted in.</br>
-		A list of classes is available at <a href="http://www.scu.edu/courseavail/" target="_blank">CourseAvail</a>.
-	</p>
-
-
-	<a class = "return" href='../index.html'>&lt;&lt;Return</a><br /><br />
-	<div class = "form_wrapper">
-	<form action="selection.php" method = "post">
-	
+  <a class = "return" href='../index.html'>Return</a><br /><br />
+  <div class = "form_wrapper">
+  <form action="selection.php" method = "post">
+  
     <!--Department:
     <select required id = "department" name = "department">
       <option value = "">Select One</option>-->
@@ -41,8 +39,8 @@
     </br></br>
     <button type = "submit" class = "submit" value = "Submit">Submit</button>-->
 
-	</form>
-	</div>
-	</div>
+  </form>
+  </div>
+  </div>
   </body>
 </html>

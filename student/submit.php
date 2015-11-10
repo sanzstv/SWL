@@ -2,17 +2,14 @@
 <html>
 <head>
   <title>Waitlist Request | SCUWaitlister</title>
-      <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-
-
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
 </head>
 
 <body>
-	<div class = "head">
-		<h1>SCUWaitLister</h1>
-
-	</div>
-	<div class = "content">
+  <div class = "head">
+    <h1>SCUWaitLister</h1>
+  </div>
+  <div class = "content">
   <h1>SCUWaitLister Waitlist Submission Page</h1>
 
   <p>
@@ -20,8 +17,8 @@
     All information is required.
   </p>
 
-	<a class = "return" href='../student/index.php'>&lt;&lt;Return</a><br /><br />
-    <?php
+  <a class = "return" href='../student/index.php'>Return</a><br /><br />
+  <?php
     if(
       ! isset(
         $_POST['department'],
@@ -71,6 +68,6 @@
     <script src = 'https://www.google.com/recaptcha/api.js'></script>
     <button class = "submit" type = "submit" value = "submit">Submit Waitlist Request</button>
   </form>
-	</div>
+  </div>
 </body>
 </html>
