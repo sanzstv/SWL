@@ -10,7 +10,7 @@
     <h1>SCUWaitLister</h1>
   </div>
   <div class = "content">
-  <h1>SCUWaitLister Waitlist Submission Page</h1>
+  <h2>SCUWaitLister Waitlist Submission Page</h2>
 
   <p>
     Please fill out the following form.<br />
