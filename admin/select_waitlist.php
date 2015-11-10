@@ -19,7 +19,7 @@
       You are using this system as the <?php echo $_SERVER['REDIRECT_REMOTE_USER']; ?> Department.<br />
       To change the Department, please restart the browser.
     </p>
-    <a class = 'return' href='index.php'><button>Return</button></a><br />
+    <a class = 'return' href='index.php'>Return</a><br />
     <?php
       $courseListLocation = "../resource/". $theDepartment ."/courseList.csv";
       $requestListLocation = "../resource/". $theDepartment ."/request/*";
