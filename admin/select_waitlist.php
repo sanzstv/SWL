@@ -2,15 +2,10 @@
 <?php require "/DCNFS/users/web/pages/tchen/COEN/174/SCUWaitLister/fcn/parseCourseList.php"; ?>
 <html>
 <head>
-
-		<title><?php echo getDepartment(); ?> Course List | SCUWaitLister</title>
-		
-		<link rel = "stylesheet" type = "text/css" href = "../css/style.css">
-
-		<title><?php echo $theDepartment; ?> Course List | SCUWaitLister</title>
-		
-		<link rel = "stylesheet" type = "text/css" href = "css/style.css">
-
+    <title><?php echo getDepartment(); ?> Course List | SCUWaitLister</title>
+    <link rel = "stylesheet" type = "text/css" href = "../css/style.css">
+    <title><?php echo $theDepartment; ?> Course List | SCUWaitLister</title>
+    <link rel = "stylesheet" type = "text/css" href = "css/style.css">
 <style>
   table {
     width:80%;
@@ -29,9 +24,9 @@
 <body>
 
 <div class = "head">
-			<h1>SCUWaitLister</h1>
-		</div>
-		<div class = "content">
+      <h1>SCUWaitLister</h1>
+    </div>
+    <div class = "content">
   <h2>SCUWaitLister Waitlist Selection Page Page</h2>
   <?php
     require "../fcn/getDepartment.php";
@@ -89,7 +84,7 @@
       echo "</tr>";
     }
   ?> 
-  </table>	
+  </table>  
 </div>
 </body>
 </html>
